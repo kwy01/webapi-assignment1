@@ -1,12 +1,77 @@
 # Assignment 1
 
-You will only need one file, ie, your node module, for this assignment.
+This is a node module to simulate the management of customer orders for [Carousell](https://www.carousell.sg/), a Singaporean e-commerce platform for users to buy and sell used goods. It includes functions for the retrieval, updating and deletion of orders, as well as payment calculation.
 
-In this readme file, describe how to use your node module. It could be similar to **app.js** from Lab2, where you call some functions in your node module and display the output. Describe how to setup your node module, if any. Describe how to call the functions, what parameters required and so on.
+# Usage
+### 1. If not already installed, [install Node JS](https://nodejs.org/en/)
+### 2.  Create an 'app.js' file in the same directory as the node module and input the following code
+```javascript
+const orders_module = require("./KangWenYu_orders");
 
-You can press **Ctrl+Shift+V** in this file in Visual Studio Code to see a live preview of the readme file.
+// Creating an order
+orders_module.createOrder(
+    "A003",
+    1,
+    "U001",
+    "180 Ang Mo Kio Ave 8, Singapore 569830"
+);
 
-For some tips in formatting text in readme file, refer to https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
+// Retrieving and displaying an order by the order id
+console.log(orders_module.getOrderById("A001U0011747452819785"));
+
+// Retrieving and displaying all orders
+console.log(orders_module.getOrders({}));
+
+// Retrieving and displaying orders with selected filters
+console.log(orders_module.getOrders({buyer_id: "U001"}));
+
+// Updating an order by the order id
+orders_module.updateOrderById("A001U0011747452819785", {quantity: 3});
+console.log(orders_module.getOrderById("A001U0011747452819785")); // Check that quantity has been updated to 3
+
+// Deleting an order by the order id
+orders_module.deleteOrderById("A002U0011747452899173");
+console.log(orders_module.getOrders({})); // Check that order has been deleted
+
+// Retrieving and displaying product details by the product id
+orders_module.getProductById("A001");
+
+// Calculating and displaying payment fees for an order
+console.log(orders_module.calculatePayment("A001U0011747452819785"));
+```
+### 3. Open a new terminal and start the application by running
+```
+node app.js
+```
+# API Reference
+
+`createOrder(product_id, quantity, buyer_id, shipping_address)`
+
+Creates a new order and adds it to the orders array.
+
+`getOrderById(order_id)`
+
+Retrieves an order by its ID.
+
+`getOrders(filters = {})`
+
+Retrieves a list of orders, where optional filters can be set.
+
+`updateOrderById(order_id, data)`
+
+Updates the specified fields of an order by its ID.
+
+`deleteOrderById(order_id)`
+
+Deletes an order by its ID.
+
+`getProductById(product_id)`
+
+Retrieves a product by its ID.
+
+`calculatePayment(order_id)`
+
+Calculates the total payment for the specified order including delivery fees.
 
 # References
-Provide the references that you have used to support your assignment. 
+Carousell Website: https://www.carousell.sg/
