@@ -26,19 +26,19 @@ const products = [
     {
         product_id: "A001",
         title: "Phone",
-        unit_price: 999.99,
+        unit_price: 1000,
         weight: 0.16
     },
     {
         product_id: "A002",
         title: "Monitor",
-        unit_price: 799.99,
+        unit_price: 800,
         weight: 3.2
     },
     {
         product_id: "A003",
         title: "TV",
-        unit_price: 1299.99,
+        unit_price: 1200,
         weight: 24
     }
 ]
