@@ -5,19 +5,19 @@
 // Simulating database content
 const orders = [
     {
-        order_id: 'A001U0011747452819785',
-        product_id: 'A001',
+        order_id: "A001U0011747452819785",
+        product_id: "A001",
         quantity: 2,
-        buyer_id: 'U001',
-        shipping_address: '180 Ang Mo Kio Ave 8, Singapore 569830',
+        buyer_id: "U001",
+        shipping_address: "199 Ang Mo Kio Ave 9, Singapore 569999",
         order_timestamp: 1747452819786
     },
     {
-        order_id: 'A002U0011747452899173',
-        product_id: 'A002',
+        order_id: "A002U0011747452899173",
+        product_id: "A002",
         quantity: 1,
-        buyer_id: 'U002',
-        shipping_address: '180 Ang Mo Kio Ave 8, Singapore 569830',
+        buyer_id: "U002",
+        shipping_address: "199 Ang Mo Kio Ave 9, Singapore 569999",
         order_timestamp: 1747452899173
     }
 ];
@@ -92,7 +92,7 @@ module.exports = {
 
     /**
      * Retrieves a list of orders, where optional filters can be set.
-     * @param {Object} filters - Key-value pairs to filter orders by (e.g. { buyer_id: 'U001' })
+     * @param {Object} filters - Key-value pairs to filter orders by (e.g. { buyer_id: "U001" })
      * @returns {Array} - An array of orders matching filter options if included, otherwise an array of all orders
      */
     getOrders(filters = {}) {

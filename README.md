@@ -13,7 +13,7 @@ orders_module.createOrder(
     "A003",
     1,
     "U001",
-    "180 Ang Mo Kio Ave 8, Singapore 569830"
+    "199 Ang Mo Kio Ave 9, Singapore 569999"
 );
 
 // Retrieving and displaying an order by the order id
